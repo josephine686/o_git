@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ohmyfood - La palette du goût</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Shrikhand&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="title-bg"></div>
+        <div class="header-menu">
+            <a href="./index.html">
+                <div class="header-icon"></div>
+            </a>
+            <div class="header-logo">
+                <img src="./Images-et-textes-Ohmyfood/images/logo/ohmyfood@2x.svg" alt="logo Ohmyfood noir">
+            </div>
+        </div>    
+        <img class="header-bg" src="./Images-et-textes-Ohmyfood/images/restaurants/3.jpg" alt="plat cuisiné sur une table">
+    </header>
+
+    <main class="main-menu">
+        <div class="items-bg">
+            <div class="restaurant-title">
+                <input class="restaurant-favo" type="checkbox" id="restaurant" name="restaurant">
+                <label for="restaurant">
+                    La palette du goût
+                </label>
+            </div>
+            <nav class="nav-entree">
+                <div class="card-entrees card-animation">
+                    <h3>ENTREES</h3>
+                    <div class="card">
+                        <input type="checkbox" name="fricasseeescargots" id="fricasseeescargots">
+                        <label for="fricasseeescargots">
+                            <span class="card-content">
+                                <span class="card-menu">
+                                    <span class="card-menu-title">Fricassée d'escargots</span>
+                                    <span class="card-menu-text">Au piment d'Espelette</span>
+                                </span>
+                                <span class="card-prix">
+                                    <span class="card-prix-text">25€</span>
+                                </span>
+                                <span class="card-check"></span>
+                            </span>
+                        </label>
+                    </div>
+                    
+                    <div class="card">
+                        <input type="checkbox" name="foiegrascanardmicuit" id="foiegrascanardmicuit">
+                        <label for="foiegrascanardmicuit">
+                            <span class="card-content">
+                                <span class="card-menu">
+                                    <span class="card-menu-title">Foie gras de canard mi-cuit</span>
+                                    <span class="card-menu-text">Et ses copeaux de truffe noire</span>
+                                </span>
+                                <span class="card-prix">
+                                    <span>35€</span>
+                                </span>
+                                <span class="card-check"></span>
+                            </span>
+                        </label>
+                    </div>
+
+                    <div class="card">
+                        <input type="checkbox" name="oeufplat" id="oeufplat">
+                        <label for="oeufplat">
+                            <span class="card-content">
+                                <span class="card-menu">
+                                    <span class="card-menu-title">Œuf au plat</span>
+                                    <span class="card-menu-text">Assaisonné à la truffe sur lit de caviar</span>
+                                </span>
+                                <span class="card-prix">
+                                    <span>20€</span>
+                                </span>
+                                <span class="card-check"></span>    
+                            </span>    
+                        </label>
+                    </div> 
+
+                </div>
+            </nav>
+
+            <nav class="nav-plats">
+                <div class="card-plats card-animation">
+                    <h3>PLATS</h3>
+                    <div class="card">
+                        <input type="checkbox" name="filetauxherbes" id="filetauxherbes">
+                        <label for="filetauxherbes">
+                            <span class="card-content">
+                                <span class="card-menu">
+                                    <span class="card-menu-title">Filet de bœuf aux herbes</span>
+                                    <span class="card-menu-text">Accompagné de sa ribambelle de légumes</span>
+                                </span>
+                                <span class="card-prix">
+                                    <span>40€</span>
+                                </span>
+                                <span class="card-check"></span>
+                            </span>
+                        </label>
+                    </div>
+
+                    <div class="card">
+                        <input type="checkbox" name="parmentierqueueboeuf" id="parmentierqueueboeuf">
+                        <label for="parmentierqueueboeuf">
+                            <span class="card-content">
+                                <span class="card-menu">
+                                    <span class="card-menu-title">Parmentier de queue de bœuf</span>
+                                    <span class="card-menu-text">À la truffe noire sur sa purée de panais</span>
+                                </span>
+                                <span class="card-prix">
+                                    <span>35€</span>
+                                </span>
+                                <span class="card-check"></span>
+                            </span>
+                        </label>
+                    </div>
+
+                    <div class="card">
+                        <input type="checkbox" name="filetturbot" id="filetturbot">
+                        <label for="filetturbot">
+                            <span class="card-content">
+                                <span class="card-menu">
+                                    <span class="card-menu-title">Filet de turbot</span>
+                                    <span class="card-menu-text">Aux agrumes</span>
+                                </span>
+                                <span class="card-prix">
+                                    <span>44€</span>
+                                </span>
+                                <span class="card-check"></span>   
+                            </span> 
+                        </label>
+                    </div>
+                </div>
+            </nav>
+
+            <nav class="nav-dessert">
+                <div class="card-dessert card-animation">
+                    <h3>DESSERTS</h3>
+                    <div class="card">
+                        <input type="checkbox" name="parisbrest" id="parisbrest">
+                        <label for="parisbrest">
+                            <span class="card-content">
+                                <span class="card-menu">
+                                    <span class="card-menu-title">Paris-Brest</span>
+                                    <span class="card-menu-text">Revisité</span>
+                                </span>
+                                <span class="card-prix">
+                                    <span>18€</span>
+                                </span>
+                                <span class="card-check"></span>
+                            </span>
+                        </label>
+                    </div>
+                    
+                    <div class="card">
+                        <input type="checkbox" name="macaronchocolatexception " id="macaronchocolatexception">
+                        <label for="macaronchocolatexception">
+                            <span class="card-content">
+                                <span class="card-menu">
+                                    <span class="card-menu-title">Macaron au chocolat d'exception</span>
+                                    <span class="card-menu-text">Et glace à la vanille de Madagascar</span>
+                                </span>
+                                <span class="card-prix">
+                                    <span>22€</span>
+                                </span>
+                                <span class="card-check"></span>
+                            </span>
+                        </label>
+                    </div>
+                    <div class="card">
+                        <input type="checkbox" name="moussechocolat" id="moussechocolat">
+                        <label for="moussechocolat">
+                            <span class="card-content">
+                                <span class="card-menu">
+                                    <span class="card-menu-title">Mousse au chocolat</span>
+                                    <span class="card-menu-text">Au piment d'Espelette et à la truffe noire</span>
+                                </span>
+                                <span class="card-prix">
+                                    <span>23€</span>
+                                </span>
+                                <span class="card-check"></span>
+                            </span>
+                        </label>
+                    </div>
+                </div>
+            </nav>
+
+            <nav class="button-com">
+                <button class="button-commander">Commander</button>
+                <button class="button-commander-2">Commander</button>
+            </nav>
+        </div>
+    </main>
+
+    <footer>
+        <nav class="footer-nav">
+            <div class="footer-logo"></div>
+            <div class="footer-link">
+                <div class="footer-proposition">
+                    Proposer un restaurant
+                </div>
+                <div class="footer-partenaire">
+                    Devenir partenaire
+                </div>
+                <div class="footer-legale">Mentions légales</div>
+                <div class="contact">Contact</div>
+            </div>
+        </nav>
+    </footer>
+</body>
+</html>

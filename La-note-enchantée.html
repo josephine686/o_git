@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ohmyfood - La note enchantée</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Shrikhand&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="title-bg"></div>
+        <div class="header-menu">
+            <a href="./index.html">
+                <div class="header-icon"></div>
+            </a>
+            <div class="header-logo">
+                <img src="./Images-et-textes-Ohmyfood/images/logo/ohmyfood@2x.svg" alt="logo Ohmyfood noir">
+            </div>
+        </div>    
+        <img class="header-bg" src="./Images-et-textes-Ohmyfood/images/restaurants/2.jpg" alt="plat cuisiné sur une table">
+    </header>
+
+    <main class="main-menu">
+        <div class="items-bg">
+            <div class="restaurant-title">
+                <input class="restaurant-favo" type="checkbox" id="restaurant" name="restaurant">
+                <label for="restaurant">
+                    La note enchantée
+                </label>
+            </div>
+            <nav class="nav-entree">
+                <div class="card-entrees card-animation">
+                    <h3>ENTREES</h3>
+                    <div class="card">
+                        <input type="checkbox" name="raviolesfoiegras" id="raviolesfoiegras">
+                        <label for="raviolesfoiegras">
+                            <span class="card-content">
+                                <span class="card-menu">
+                                    <span class="card-menu-title">Ravioles de foie gras</span>
+                                    <span class="card-menu-text">Accompagnées de leur crème à la truffe</span>
+                                </span>
+                                <span class="card-prix">
+                                    <span class="card-prix-text">25€</span>
+                                </span>
+                                <span class="card-check"></span>
+                            </span>
+                        </label>
+                    </div>
+                    
+                    <div class="card">
+                        <input type="checkbox" name="caviarosciètre" id="caviarosciètre">
+                        <label for="caviarosciètre">
+                            <span class="card-content">
+                                <span class="card-menu">
+                                    <span class="card-menu-title">Caviar osciètre</span>
+                                    <span class="card-menu-text">Sur blini à la farine de blé noir</span>
+                                </span>
+                                <span class="card-prix">
+                                    <span>35€</span>
+                                </span>
+                                <span class="card-check"></span>
+                            </span>
+                        </label>
+                    </div>
+
+                    <div class="card">
+                        <input type="checkbox" name="homardespuma" id="homardespuma">
+                        <label for="homardespuma">
+                            <span class="card-content">
+                                <span class="card-menu">
+                                    <span class="card-menu-title">Homard et espuma de potiron</span>
+                                    <span class="card-menu-text">Marinés aux zestes d'orange</span>
+                                </span>
+                                <span class="card-prix">
+                                    <span>20€</span>
+                                </span>
+                                <span class="card-check"></span>    
+                            </span>    
+                        </label>
+                    </div> 
+
+                    <div class="card">
+                        <input type="checkbox" name="foieentier" id="foieentier">
+                        <label for="foieentier">
+                            <span class="card-content">
+                                <span class="card-menu">
+                                    <span class="card-menu-title">Foie gras de canard cuit entier</span>
+                                    <span class="card-menu-text">Confiture de figue et pain toasté</span>
+                                </span>
+                                <span class="card-prix">
+                                    <span>35€</span>
+                                </span>
+                                <span class="card-check"></span>    
+                            </span>    
+                        </label>
+                    </div> 
+                </div>
+            </nav>
+
+            <nav class="nav-plats">
+                <div class="card-plats card-animation">
+                    <h3>PLATS</h3>
+                    <div class="card">
+                        <input type="checkbox" name="noixcoquillessaintj" id="noixcoquillessaintj">
+                        <label for="noixcoquillessaintj">
+                            <span class="card-content">
+                                <span class="card-menu">
+                                    <span class="card-menu-title">Noix de coquilles Saint-Jacques</span>
+                                    <span class="card-menu-text">Sur lit de purée de céleri-rave</span>
+                                </span>
+                                <span class="card-prix">
+                                    <span>40€</span>
+                                </span>
+                                <span class="card-check"></span>
+                            </span>
+                        </label>
+                    </div>
+
+                    <div class="card">
+                        <input type="checkbox" name="langoustinepoelee" id="langoustinepoelee">
+                        <label for="langoustinepoelee">
+                            <span class="card-content">
+                                <span class="card-menu">
+                                    <span class="card-menu-title">Langoustine poêlée</span>
+                                    <span class="card-menu-text">Purée de patate douce</span>
+                                </span>
+                                <span class="card-prix">
+                                    <span>35€</span>
+                                </span>
+                                <span class="card-check"></span>
+                            </span>
+                        </label>
+                    </div>
+
+                    <div class="card">
+                        <input type="checkbox" name="pigeonneau" id="pigeonneau">
+                        <label for="pigeonneau">
+                            <span class="card-content">
+                                <span class="card-menu">
+                                    <span class="card-menu-title">Mijoté de queue de bœuf</span>
+                                    <span class="card-menu-text">Et riz sauvage aux zestes de citron</span>
+                                </span>
+                                <span class="card-prix">
+                                    <span>44€</span>
+                                </span>
+                                <span class="card-check"></span>   
+                            </span> 
+                        </label>
+                    </div>
+                </div>
+            </nav>
+
+            <nav class="nav-dessert">
+                <div class="card-dessert card-animation">
+                    <h3>DESSERTS</h3>
+                    <div class="card">
+                        <input type="checkbox" name="macaronnoisettechocolat" id="macaronnoisettechocolat">
+                        <label for="macaronnoisettechocolat">
+                            <span class="card-content">
+                                <span class="card-menu">
+                                    <span class="card-menu-title">Macaron noisette et chocolat</span>
+                                    <span class="card-menu-text">Glace au caramel brun et sel de Guérande</span>
+                                </span>
+                                <span class="card-prix">
+                                    <span>18€</span>
+                                </span>
+                                <span class="card-check"></span>
+                            </span>
+                        </label>
+                    </div>
+                    
+                    <div class="card">
+                        <input type="checkbox" name="babaaurhum " id="babaaurhum">
+                        <label for="babaaurhum">
+                            <span class="card-content">
+                                <span class="card-menu">
+                                    <span class="card-menu-title">Baba au rhum revisité </span>
+                                    <span class="card-menu-text">Avec son coulis de citron</span>
+                                </span>
+                                <span class="card-prix">
+                                    <span>22€</span>
+                                </span>
+                                <span class="card-check"></span>
+                            </span>
+                        </label>
+                    </div>
+                    <div class="card">
+                        <input type="checkbox" name="tartecitronmeringuee" id="tartecitronmeringuee">
+                        <label for="tartecitronmeringuee">
+                            <span class="card-content">
+                                <span class="card-menu">
+                                    <span class="card-menu-title">Tarte au citron meringuée </span>
+                                    <span class="card-menu-text">Déstructurée</span>
+                                </span>
+                                <span class="card-prix">
+                                    <span>23€</span>
+                                </span>
+                                <span class="card-check"></span>
+                            </span>
+                        </label>
+                    </div>
+                </div>
+            </nav>
+
+            <nav class="button-com">
+                <button class="button-commander">Commander</button>
+                <button class="button-commander-2">Commander</button>
+            </nav>
+        </div>
+    </main>
+
+    <footer>
+        <nav class="footer-nav">
+            <div class="footer-logo"></div>
+            <div class="footer-link">
+                <div class="footer-proposition">
+                    Proposer un restaurant
+                </div>
+                <div class="footer-partenaire">
+                    Devenir partenaire
+                </div>
+                <div class="footer-legale">Mentions légales</div>
+                <div class="contact">Contact</div>
+            </div>
+        </nav>
+    </footer>
+</body>
+</html>

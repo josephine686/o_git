@@ -1,0 +1,1552 @@
+/* -----------------------------------------------menuRestaurant */
+@keyframes fadeTop {
+  0% {
+    opacity: 0;
+    transform: scaleY(0) scaleX(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scaleY(1) scaleX(1);
+  }
+}
+@keyframes menuEffect {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes loadEnd {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0);
+  }
+}
+@keyframes loaderEnd {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes titleZoom {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(500);
+  }
+}
+@keyframes loaderPop {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes loaderFront {
+  0% {
+    transform: scaleX(0);
+  }
+  25% {
+    transform: scaleX(0.5);
+  }
+  50% {
+    transform: scaleX(0.6);
+  }
+  75% {
+    transform: scaleX(0.95);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+body {
+  background-color: #F6F6F6;
+  margin: 0;
+  font-family: "Roboto";
+}
+body .load {
+  background-color: black;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 1;
+  animation: loadEnd 1s ease forwards 5s;
+}
+body .load .load-logo {
+  background-image: url(../Images-et-textes-Ohmyfood/images/logo/ohmyfood-blanc.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  width: 80vw;
+  height: 80vh;
+  position: relative;
+  animation: loaderPop 2s ease both 1s, titleZoom 2s ease both 4.2s;
+}
+body .load .bar {
+  height: 4px;
+  width: 60%;
+  position: absolute;
+  bottom: 400px;
+  animation: loaderEnd 0.5s both 3.8s;
+}
+body .load .bar .back-bar {
+  background-color: #353535;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  animation: loaderPop 0.5s ease both 1.5s;
+}
+body .load .bar .front-bar {
+  background-color: white;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0px 0px 15px 2px white;
+  transform-origin: 0%;
+  animation: loaderFront 2s ease both 2s;
+}
+body a {
+  all: unset;
+}
+body header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+}
+body header .title-bg {
+  background-color: white;
+  height: 80px;
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  z-index: -1;
+}
+body header .header-title > h1 {
+  text-align: center;
+}
+body header .header-title > h2 {
+  text-align: center;
+  margin-bottom: 27px;
+}
+body header .header-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 14px;
+  padding-bottom: 13px;
+}
+body header .location {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background-color: #EAEAEA;
+  margin-bottom: 24px;
+}
+body header .location::before {
+  content: "";
+  background-image: url(../Images-et-textes-Ohmyfood/images/logo/Pin.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 12px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 15px;
+}
+body header .location .search-location[placeholder] {
+  font-size: 16px;
+  font-weight: 500;
+  color: black;
+  width: 120px;
+  border-style: none;
+  background-color: #EAEAEA;
+}
+body header .header-title {
+  background-color: #F6F6F6;
+}
+body header .header-title h1 {
+  font-size: 24px;
+  font-weight: 700;
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+body header .header-title h2 {
+  font-size: 18px;
+  font-weight: 300;
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body header .header-button {
+  bottom: 0;
+  opacity: 1;
+  font-size: 16px;
+  font-weight: 500;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 25px;
+  width: 218px;
+  height: 50px;
+  padding: 0;
+  background: linear-gradient(#FF79DA, #9356DC);
+  box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
+}
+body header .header-button__bg {
+  position: absolute;
+  bottom: 0;
+  opacity: 0;
+  font-size: 16px;
+  font-weight: 500;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 25px;
+  width: 218px;
+  height: 50px;
+  padding: 0;
+  background: linear-gradient(rgba(255, 121, 217, 0.6901960784), rgba(146, 86, 220, 0.6901960784));
+  box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
+}
+body header:hover .header-button__bg {
+  opacity: 1;
+}
+body header:hover .header-button {
+  opacity: 0;
+}
+body main .fonctionnement {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 440px;
+  margin-bottom: 54px;
+  margin-top: 57px;
+  background-color: white;
+}
+body main .fonctionnement .fonc-items {
+  padding-right: 20px;
+  padding-left: 20px;
+}
+body main .fonctionnement .fonc-items > h2 {
+  font-size: 24px;
+  font-weight: 700;
+  color: black;
+  padding-left: 15px;
+}
+body main .fonctionnement .fonctionnement-flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 18px;
+}
+body main .fonctionnement .card:nth-child(1) {
+  border-radius: 20px;
+  display: flex;
+  width: 335px;
+  height: 72.38px;
+  background-color: #F6F6F6;
+  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
+  position: relative;
+  align-items: center;
+}
+body main .fonctionnement .card:nth-child(1)::before {
+  position: absolute;
+  content: "";
+  background-image: url(../Images-et-textes-Ohmyfood/images/logo/icn-1.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 20px;
+  height: 20px;
+  margin-left: 38px;
+}
+body main .fonctionnement .card:nth-child(2) {
+  border-radius: 20px;
+  display: flex;
+  width: 335px;
+  height: 72.38px;
+  background-color: #F6F6F6;
+  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
+  position: relative;
+  align-items: center;
+}
+body main .fonctionnement .card:nth-child(2)::before {
+  position: absolute;
+  content: "";
+  background-image: url(../Images-et-textes-Ohmyfood/images/logo/icn-2.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 20px;
+  height: 20px;
+  margin-left: 38px;
+}
+body main .fonctionnement .card:nth-child(3) {
+  border-radius: 20px;
+  display: flex;
+  width: 335px;
+  height: 72.38px;
+  background-color: #F6F6F6;
+  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
+  position: relative;
+  align-items: center;
+}
+body main .fonctionnement .card:nth-child(3)::before {
+  position: absolute;
+  content: "";
+  background-image: url(../Images-et-textes-Ohmyfood/images/logo/icn-3.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 20px;
+  height: 20px;
+  margin-left: 38px;
+}
+body main .fonctionnement p {
+  font-size: 16px;
+  font-weight: 500;
+  color: black;
+  margin-left: 75px;
+  flex-wrap: wrap;
+}
+body main .fonctionnement .fonctionnement-bulle {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  border-radius: 50px;
+  background-color: #9356DC;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14.18px;
+  font-weight: 500;
+  color: white;
+  top: 50%;
+  left: -7%;
+  transform: translate(50%, -50%);
+}
+body main .restaurant {
+  display: flex;
+  flex-direction: column;
+  background-color: #F6F6F6;
+  margin-bottom: 60px;
+}
+body main .restaurant > h2 {
+  font-size: 24px;
+  font-weight: 700;
+  color: black;
+  padding-left: 15px;
+}
+body main .restaurant .restaurant-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 340px);
+  grid-template-rows: repeat(auto-fit, 251px);
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+}
+body main .restaurant .restaurant-grid .card:nth-child(1) {
+  border-radius: 15px;
+  display: flex;
+  width: 340px;
+  height: 251px;
+  background-color: white;
+  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.1);
+  flex-direction: column;
+}
+body main .restaurant .restaurant-grid .card:nth-child(1) .img_background {
+  border-radius: 15px 15px 0 0;
+  background-image: url(../Images-et-textes-Ohmyfood/images/restaurants/1.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 340px;
+  height: 231px;
+  position: relative;
+}
+body main .restaurant .restaurant-grid .card:nth-child(1) .img_background .nouveau {
+  position: absolute;
+  display: flex;
+  background-color: #99E2D0;
+  right: 25px;
+  top: 25px;
+  width: 80px;
+  height: 29px;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 500;
+  color: #008766;
+}
+body main .restaurant .restaurant-grid .card:nth-child(1) .txt-restaurant {
+  position: relative;
+  padding-left: 15px;
+}
+body main .restaurant .restaurant-grid .card:nth-child(1) .txt-restaurant .h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: black;
+}
+body main .restaurant .restaurant-grid .card:nth-child(1) .txt-restaurant .p {
+  font-size: 17px;
+  font-weight: 300;
+  color: black;
+}
+body main .restaurant .restaurant-grid .card:nth-child(1) .txt-restaurant .restaurant-logo {
+  position: absolute;
+  bottom: 40px;
+  right: 20px;
+}
+body main .restaurant .restaurant-grid .card:nth-child(1) .txt-restaurant .restaurant-logo .checkbox-custom {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+body main .restaurant .restaurant-grid .card:nth-child(1) .txt-restaurant .restaurant-logo .checkbox-custom + label {
+  background-image: url(../Images-et-textes-Ohmyfood/images/logo/coeur.svg);
+  display: block;
+  width: 20px;
+  height: 20px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+body main .restaurant .restaurant-grid .card:nth-child(1) .txt-restaurant .restaurant-logo .checkbox-custom:checked + label::after {
+  content: "";
+  background-image: url(../Images-et-textes-Ohmyfood/images/logo/coeur-checked.svg);
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  width: 20px;
+  height: 20px;
+  transform-origin: bottom;
+  animation: fadeTop 0s ease forwards;
+  cursor: pointer;
+}
+body main .restaurant .restaurant-grid .card:nth-child(2) {
+  border-radius: 15px;
+  display: flex;
+  width: 340px;
+  height: 251px;
+  background-color: white;
+  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.1);
+  flex-direction: column;
+}
+body main .restaurant .restaurant-grid .card:nth-child(2) .img_background {
+  border-radius: 15px 15px 0 0;
+  background-image: url(../Images-et-textes-Ohmyfood/images/restaurants/2.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 340px;
+  height: 231px;
+  position: relative;
+}
+body main .restaurant .restaurant-grid .card:nth-child(2) .img_background .nouveau {
+  position: absolute;
+  display: flex;
+  background-color: #99E2D0;
+  right: 25px;
+  top: 25px;
+  width: 80px;
+  height: 29px;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 500;
+  color: #008766;
+}
+body main .restaurant .restaurant-grid .card:nth-child(2) .txt-restaurant {
+  position: relative;
+  padding-left: 15px;
+}
+body main .restaurant .restaurant-grid .card:nth-child(2) .txt-restaurant .h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: black;
+}
+body main .restaurant .restaurant-grid .card:nth-child(2) .txt-restaurant .p {
+  font-size: 17px;
+  font-weight: 300;
+  color: black;
+}
+body main .restaurant .restaurant-grid .card:nth-child(2) .txt-restaurant .restaurant-logo {
+  position: absolute;
+  bottom: 40px;
+  right: 20px;
+}
+body main .restaurant .restaurant-grid .card:nth-child(2) .txt-restaurant .restaurant-logo .checkbox-custom {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+body main .restaurant .restaurant-grid .card:nth-child(2) .txt-restaurant .restaurant-logo .checkbox-custom + label {
+  background-image: url(../Images-et-textes-Ohmyfood/images/logo/coeur.svg);
+  display: block;
+  width: 20px;
+  height: 20px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+body main .restaurant .restaurant-grid .card:nth-child(2) .txt-restaurant .restaurant-logo .checkbox-custom:checked + label::after {
+  content: "";
+  background-image: url(../Images-et-textes-Ohmyfood/images/logo/coeur-checked.svg);
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  width: 20px;
+  height: 20px;
+  transform-origin: bottom;
+  animation: fadeTop 0s ease forwards;
+  cursor: pointer;
+}
+body main .restaurant .restaurant-grid .card:nth-child(3) {
+  border-radius: 15px;
+  display: flex;
+  width: 340px;
+  height: 251px;
+  background-color: white;
+  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.1);
+  flex-direction: column;
+}
+body main .restaurant .restaurant-grid .card:nth-child(3) .img_background {
+  border-radius: 15px 15px 0 0;
+  background-image: url(../Images-et-textes-Ohmyfood/images/restaurants/3.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 340px;
+  height: 231px;
+  position: relative;
+}
+body main .restaurant .restaurant-grid .card:nth-child(3) .img_background .nouveau {
+  position: absolute;
+  display: flex;
+  background-color: #99E2D0;
+  right: 25px;
+  top: 25px;
+  width: 80px;
+  height: 29px;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 500;
+  color: #008766;
+}
+body main .restaurant .restaurant-grid .card:nth-child(3) .txt-restaurant {
+  position: relative;
+  padding-left: 15px;
+}
+body main .restaurant .restaurant-grid .card:nth-child(3) .txt-restaurant .h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: black;
+}
+body main .restaurant .restaurant-grid .card:nth-child(3) .txt-restaurant .p {
+  font-size: 17px;
+  font-weight: 300;
+  color: black;
+}
+body main .restaurant .restaurant-grid .card:nth-child(3) .txt-restaurant .restaurant-logo {
+  position: absolute;
+  bottom: 40px;
+  right: 20px;
+}
+body main .restaurant .restaurant-grid .card:nth-child(3) .txt-restaurant .restaurant-logo .checkbox-custom {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+body main .restaurant .restaurant-grid .card:nth-child(3) .txt-restaurant .restaurant-logo .checkbox-custom + label {
+  background-image: url(../Images-et-textes-Ohmyfood/images/logo/coeur.svg);
+  display: block;
+  width: 20px;
+  height: 20px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+body main .restaurant .restaurant-grid .card:nth-child(3) .txt-restaurant .restaurant-logo .checkbox-custom:checked + label::after {
+  content: "";
+  background-image: url(../Images-et-textes-Ohmyfood/images/logo/coeur-checked.svg);
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  width: 20px;
+  height: 20px;
+  transform-origin: bottom;
+  animation: fadeTop 0s ease forwards;
+  cursor: pointer;
+}
+body main .restaurant .restaurant-grid .card:nth-child(4) {
+  border-radius: 15px;
+  display: flex;
+  width: 340px;
+  height: 251px;
+  background-color: white;
+  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.1);
+  flex-direction: column;
+}
+body main .restaurant .restaurant-grid .card:nth-child(4) .img_background {
+  border-radius: 15px 15px 0 0;
+  background-image: url(../Images-et-textes-Ohmyfood/images/restaurants/4.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 340px;
+  height: 231px;
+  position: relative;
+}
+body main .restaurant .restaurant-grid .card:nth-child(4) .img_background .nouveau {
+  position: absolute;
+  display: flex;
+  background-color: #99E2D0;
+  right: 25px;
+  top: 25px;
+  width: 80px;
+  height: 29px;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 500;
+  color: #008766;
+}
+body main .restaurant .restaurant-grid .card:nth-child(4) .txt-restaurant {
+  position: relative;
+  padding-left: 15px;
+}
+body main .restaurant .restaurant-grid .card:nth-child(4) .txt-restaurant .h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: black;
+}
+body main .restaurant .restaurant-grid .card:nth-child(4) .txt-restaurant .p {
+  font-size: 17px;
+  font-weight: 300;
+  color: black;
+}
+body main .restaurant .restaurant-grid .card:nth-child(4) .txt-restaurant .restaurant-logo {
+  position: absolute;
+  bottom: 40px;
+  right: 20px;
+}
+body main .restaurant .restaurant-grid .card:nth-child(4) .txt-restaurant .restaurant-logo .checkbox-custom {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+body main .restaurant .restaurant-grid .card:nth-child(4) .txt-restaurant .restaurant-logo .checkbox-custom + label {
+  background-image: url(../Images-et-textes-Ohmyfood/images/logo/coeur.svg);
+  display: block;
+  width: 20px;
+  height: 20px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+body main .restaurant .restaurant-grid .card:nth-child(4) .txt-restaurant .restaurant-logo .checkbox-custom:checked + label::after {
+  content: "";
+  background-image: url(../Images-et-textes-Ohmyfood/images/logo/coeur-checked.svg);
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  width: 20px;
+  height: 20px;
+  transform-origin: bottom;
+  animation: fadeTop 0s ease forwards;
+  cursor: pointer;
+}
+body main footer {
+  background-color: #353535;
+  color: white;
+  margin: 0px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: 186px;
+}
+body main footer .footer-nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+body main footer .footer-nav .footer-logo {
+  background-image: url(../Images-et-textes-Ohmyfood/images/logo/ohmyfood-blanc.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 138px;
+  height: 27px;
+  display: block;
+  margin-left: 25px;
+  margin-top: 22px;
+  margin-bottom: 16px;
+}
+body main footer .footer-nav .footer-link {
+  margin-left: 25px;
+}
+body main footer .footer-nav .footer-link .footer-proposition {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 7px;
+}
+body main footer .footer-nav .footer-link .footer-proposition::before {
+  content: "";
+  background-image: url(../Images-et-textes-Ohmyfood/images/logo/couverts.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 20px;
+  height: 20px;
+  display: block;
+  margin-right: 4px;
+}
+body main footer .footer-nav .footer-link .footer-partenaire {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 7px;
+}
+body main footer .footer-nav .footer-link .footer-partenaire::before {
+  content: "";
+  background-image: url(../Images-et-textes-Ohmyfood/images/logo/mains.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 20px;
+  height: 20px;
+  display: block;
+  margin-right: 4px;
+}
+body main footer .footer-nav .footer-link .footer-legale,
+body main footer .footer-nav .footer-link .contact {
+  margin-bottom: 7px;
+}
+
+/* --------------------------------------------------------MENU */
+header .header-menu {
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+}
+header .header-menu .header-icon {
+  background-image: url(../Images-et-textes-Ohmyfood/images/logo/fleche.svg);
+  background-repeat: no-repeat;
+  background-position: left;
+  background-size: contain;
+  width: 17px;
+  height: 17px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+header .header-menu .header-logo {
+  width: 100vw;
+  padding-right: 37px;
+}
+header .header-bg {
+  width: 100%;
+  height: 383px;
+  object-fit: cover;
+  object-position: center;
+  display: inline-block;
+}
+
+.main-menu {
+  padding-top: 0px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  background-color: white;
+}
+.main-menu .items-bg {
+  background-color: #F6F6F6;
+  width: 100%;
+  border-radius: 25px;
+  transform: translateY(-51px);
+  min-width: max-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 40px;
+}
+.main-menu .items-bg .restaurant-favo {
+  opacity: 0;
+  position: absolute;
+}
+.main-menu .items-bg .restaurant-favo + label {
+  font-size: 28px;
+  font-weight: 400;
+  color: black;
+  font-family: "Shrikhand";
+  display: flex;
+  align-items: center;
+  margin-top: 32px;
+}
+.main-menu .items-bg .restaurant-favo + label::after {
+  content: "";
+  background-image: url(../Images-et-textes-Ohmyfood/images/logo/coeur.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  width: 17px;
+  height: 17px;
+  display: inline-block;
+  margin-left: 20px;
+}
+.main-menu .items-bg .restaurant-favo:checked + label::after {
+  content: "";
+  background-image: url(../Images-et-textes-Ohmyfood/images/logo/coeur-checked.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  width: 17px;
+  height: 17px;
+  display: inline-block;
+  animation: fadeTop 0.1s ease forwards;
+}
+.main-menu .items-bg .nav-entree .card-animation .card:nth-child(1),
+.main-menu .items-bg .nav-plats .card-animation .card:nth-child(1),
+.main-menu .items-bg .nav-dessert .card-animation .card:nth-child(1) {
+  opacity: 0;
+  animation: menuEffect 2s ease forwards;
+  animation-delay: 0.1s;
+}
+.main-menu .items-bg .nav-entree .card-animation .card:nth-child(2),
+.main-menu .items-bg .nav-plats .card-animation .card:nth-child(2),
+.main-menu .items-bg .nav-dessert .card-animation .card:nth-child(2) {
+  opacity: 0;
+  animation: menuEffect 2s ease forwards;
+  animation-delay: 0.2s;
+}
+.main-menu .items-bg .nav-entree .card-animation .card:nth-child(3),
+.main-menu .items-bg .nav-plats .card-animation .card:nth-child(3),
+.main-menu .items-bg .nav-dessert .card-animation .card:nth-child(3) {
+  opacity: 0;
+  animation: menuEffect 2s ease forwards;
+  animation-delay: 0.3s;
+}
+.main-menu .items-bg .nav-entree .card-animation .card:nth-child(4),
+.main-menu .items-bg .nav-plats .card-animation .card:nth-child(4),
+.main-menu .items-bg .nav-dessert .card-animation .card:nth-child(4) {
+  opacity: 0;
+  animation: menuEffect 2s ease forwards;
+  animation-delay: 0.4s;
+}
+.main-menu .items-bg .nav-entree .card-animation .card:nth-child(5),
+.main-menu .items-bg .nav-plats .card-animation .card:nth-child(5),
+.main-menu .items-bg .nav-dessert .card-animation .card:nth-child(5) {
+  opacity: 0;
+  animation: menuEffect 2s ease forwards;
+  animation-delay: 0.5s;
+}
+.main-menu .items-bg .nav-entree .card-animation .card:nth-child(6),
+.main-menu .items-bg .nav-plats .card-animation .card:nth-child(6),
+.main-menu .items-bg .nav-dessert .card-animation .card:nth-child(6) {
+  opacity: 0;
+  animation: menuEffect 2s ease forwards;
+  animation-delay: 0.6s;
+}
+.main-menu .items-bg .nav-entree .card-animation .card:nth-child(7),
+.main-menu .items-bg .nav-plats .card-animation .card:nth-child(7),
+.main-menu .items-bg .nav-dessert .card-animation .card:nth-child(7) {
+  opacity: 0;
+  animation: menuEffect 2s ease forwards;
+  animation-delay: 0.7s;
+}
+.main-menu .items-bg .nav-entree .card-animation .card:nth-child(8),
+.main-menu .items-bg .nav-plats .card-animation .card:nth-child(8),
+.main-menu .items-bg .nav-dessert .card-animation .card:nth-child(8) {
+  opacity: 0;
+  animation: menuEffect 2s ease forwards;
+  animation-delay: 0.8s;
+}
+.main-menu .items-bg .nav-entree .card-animation .card:nth-child(9),
+.main-menu .items-bg .nav-plats .card-animation .card:nth-child(9),
+.main-menu .items-bg .nav-dessert .card-animation .card:nth-child(9) {
+  opacity: 0;
+  animation: menuEffect 2s ease forwards;
+  animation-delay: 0.9s;
+}
+.main-menu .items-bg .nav-entree .card-animation .card:nth-child(10),
+.main-menu .items-bg .nav-plats .card-animation .card:nth-child(10),
+.main-menu .items-bg .nav-dessert .card-animation .card:nth-child(10) {
+  opacity: 0;
+  animation: menuEffect 2s ease forwards;
+  animation-delay: 1s;
+}
+.main-menu .items-bg .nav-entree .card-animation .card:nth-child(11),
+.main-menu .items-bg .nav-plats .card-animation .card:nth-child(11),
+.main-menu .items-bg .nav-dessert .card-animation .card:nth-child(11) {
+  opacity: 0;
+  animation: menuEffect 2s ease forwards;
+  animation-delay: 1.1s;
+}
+.main-menu .items-bg .nav-entree .card-animation .card:nth-child(12),
+.main-menu .items-bg .nav-plats .card-animation .card:nth-child(12),
+.main-menu .items-bg .nav-dessert .card-animation .card:nth-child(12) {
+  opacity: 0;
+  animation: menuEffect 2s ease forwards;
+  animation-delay: 1.2s;
+}
+.main-menu .items-bg .nav-entree .card-animation .card:nth-child(13),
+.main-menu .items-bg .nav-plats .card-animation .card:nth-child(13),
+.main-menu .items-bg .nav-dessert .card-animation .card:nth-child(13) {
+  opacity: 0;
+  animation: menuEffect 2s ease forwards;
+  animation-delay: 1.3s;
+}
+.main-menu .items-bg .nav-entree .card-animation .card:nth-child(14),
+.main-menu .items-bg .nav-plats .card-animation .card:nth-child(14),
+.main-menu .items-bg .nav-dessert .card-animation .card:nth-child(14) {
+  opacity: 0;
+  animation: menuEffect 2s ease forwards;
+  animation-delay: 1.4s;
+}
+.main-menu .items-bg .nav-entree .card-animation .card:nth-child(15),
+.main-menu .items-bg .nav-plats .card-animation .card:nth-child(15),
+.main-menu .items-bg .nav-dessert .card-animation .card:nth-child(15) {
+  opacity: 0;
+  animation: menuEffect 2s ease forwards;
+  animation-delay: 1.5s;
+}
+.main-menu .items-bg .nav-entree .card-animation .card:nth-child(16),
+.main-menu .items-bg .nav-plats .card-animation .card:nth-child(16),
+.main-menu .items-bg .nav-dessert .card-animation .card:nth-child(16) {
+  opacity: 0;
+  animation: menuEffect 2s ease forwards;
+  animation-delay: 1.6s;
+}
+.main-menu .items-bg .nav-entree .card-animation .card:nth-child(17),
+.main-menu .items-bg .nav-plats .card-animation .card:nth-child(17),
+.main-menu .items-bg .nav-dessert .card-animation .card:nth-child(17) {
+  opacity: 0;
+  animation: menuEffect 2s ease forwards;
+  animation-delay: 1.7s;
+}
+.main-menu .items-bg .nav-entree .card-animation .card:nth-child(18),
+.main-menu .items-bg .nav-plats .card-animation .card:nth-child(18),
+.main-menu .items-bg .nav-dessert .card-animation .card:nth-child(18) {
+  opacity: 0;
+  animation: menuEffect 2s ease forwards;
+  animation-delay: 1.8s;
+}
+.main-menu .items-bg .nav-entree .card-animation .card:nth-child(19),
+.main-menu .items-bg .nav-plats .card-animation .card:nth-child(19),
+.main-menu .items-bg .nav-dessert .card-animation .card:nth-child(19) {
+  opacity: 0;
+  animation: menuEffect 2s ease forwards;
+  animation-delay: 1.9s;
+}
+.main-menu .items-bg .nav-entree .card-animation .card:nth-child(20),
+.main-menu .items-bg .nav-plats .card-animation .card:nth-child(20),
+.main-menu .items-bg .nav-dessert .card-animation .card:nth-child(20) {
+  opacity: 0;
+  animation: menuEffect 2s ease forwards;
+  animation-delay: 2s;
+}
+.main-menu .items-bg .nav-entree .card-animation .card:nth-child(21),
+.main-menu .items-bg .nav-plats .card-animation .card:nth-child(21),
+.main-menu .items-bg .nav-dessert .card-animation .card:nth-child(21) {
+  opacity: 0;
+  animation: menuEffect 2s ease forwards;
+  animation-delay: 2.1s;
+}
+.main-menu .items-bg .nav-entree .card-animation .card:nth-child(22),
+.main-menu .items-bg .nav-plats .card-animation .card:nth-child(22),
+.main-menu .items-bg .nav-dessert .card-animation .card:nth-child(22) {
+  opacity: 0;
+  animation: menuEffect 2s ease forwards;
+  animation-delay: 2.2s;
+}
+.main-menu .items-bg .nav-entree .card-animation .card:nth-child(23),
+.main-menu .items-bg .nav-plats .card-animation .card:nth-child(23),
+.main-menu .items-bg .nav-dessert .card-animation .card:nth-child(23) {
+  opacity: 0;
+  animation: menuEffect 2s ease forwards;
+  animation-delay: 2.3s;
+}
+.main-menu .items-bg .nav-entree .card-animation .card:nth-child(24),
+.main-menu .items-bg .nav-plats .card-animation .card:nth-child(24),
+.main-menu .items-bg .nav-dessert .card-animation .card:nth-child(24) {
+  opacity: 0;
+  animation: menuEffect 2s ease forwards;
+  animation-delay: 2.4s;
+}
+.main-menu .items-bg .nav-entree .card-animation .card:nth-child(25),
+.main-menu .items-bg .nav-plats .card-animation .card:nth-child(25),
+.main-menu .items-bg .nav-dessert .card-animation .card:nth-child(25) {
+  opacity: 0;
+  animation: menuEffect 2s ease forwards;
+  animation-delay: 2.5s;
+}
+.main-menu .items-bg .nav-entree .card-animation .card:nth-child(26),
+.main-menu .items-bg .nav-plats .card-animation .card:nth-child(26),
+.main-menu .items-bg .nav-dessert .card-animation .card:nth-child(26) {
+  opacity: 0;
+  animation: menuEffect 2s ease forwards;
+  animation-delay: 2.6s;
+}
+.main-menu .items-bg .nav-entree .card-animation .card:nth-child(27),
+.main-menu .items-bg .nav-plats .card-animation .card:nth-child(27),
+.main-menu .items-bg .nav-dessert .card-animation .card:nth-child(27) {
+  opacity: 0;
+  animation: menuEffect 2s ease forwards;
+  animation-delay: 2.7s;
+}
+.main-menu .items-bg .nav-entree .card-animation .card:nth-child(28),
+.main-menu .items-bg .nav-plats .card-animation .card:nth-child(28),
+.main-menu .items-bg .nav-dessert .card-animation .card:nth-child(28) {
+  opacity: 0;
+  animation: menuEffect 2s ease forwards;
+  animation-delay: 2.8s;
+}
+.main-menu .items-bg .nav-entree .card-animation .card:nth-child(29),
+.main-menu .items-bg .nav-plats .card-animation .card:nth-child(29),
+.main-menu .items-bg .nav-dessert .card-animation .card:nth-child(29) {
+  opacity: 0;
+  animation: menuEffect 2s ease forwards;
+  animation-delay: 2.9s;
+}
+.main-menu .items-bg .nav-entree .card-animation .card:nth-child(30),
+.main-menu .items-bg .nav-plats .card-animation .card:nth-child(30),
+.main-menu .items-bg .nav-dessert .card-animation .card:nth-child(30) {
+  opacity: 0;
+  animation: menuEffect 2s ease forwards;
+  animation-delay: 3s;
+}
+.main-menu .items-bg .nav-entree .card-animation .card:nth-child(31),
+.main-menu .items-bg .nav-plats .card-animation .card:nth-child(31),
+.main-menu .items-bg .nav-dessert .card-animation .card:nth-child(31) {
+  opacity: 0;
+  animation: menuEffect 2s ease forwards;
+  animation-delay: 3.1s;
+}
+.main-menu .items-bg .nav-entree .card-animation .card:nth-child(32),
+.main-menu .items-bg .nav-plats .card-animation .card:nth-child(32),
+.main-menu .items-bg .nav-dessert .card-animation .card:nth-child(32) {
+  opacity: 0;
+  animation: menuEffect 2s ease forwards;
+  animation-delay: 3.2s;
+}
+.main-menu .items-bg .nav-entree .card-animation .card:nth-child(33),
+.main-menu .items-bg .nav-plats .card-animation .card:nth-child(33),
+.main-menu .items-bg .nav-dessert .card-animation .card:nth-child(33) {
+  opacity: 0;
+  animation: menuEffect 2s ease forwards;
+  animation-delay: 3.3s;
+}
+.main-menu .items-bg .nav-entree .card-animation .card:nth-child(34),
+.main-menu .items-bg .nav-plats .card-animation .card:nth-child(34),
+.main-menu .items-bg .nav-dessert .card-animation .card:nth-child(34) {
+  opacity: 0;
+  animation: menuEffect 2s ease forwards;
+  animation-delay: 3.4s;
+}
+.main-menu .items-bg .nav-entree .card-animation .card:nth-child(35),
+.main-menu .items-bg .nav-plats .card-animation .card:nth-child(35),
+.main-menu .items-bg .nav-dessert .card-animation .card:nth-child(35) {
+  opacity: 0;
+  animation: menuEffect 2s ease forwards;
+  animation-delay: 3.5s;
+}
+.main-menu .items-bg .nav-entree .card-animation .card:nth-child(36),
+.main-menu .items-bg .nav-plats .card-animation .card:nth-child(36),
+.main-menu .items-bg .nav-dessert .card-animation .card:nth-child(36) {
+  opacity: 0;
+  animation: menuEffect 2s ease forwards;
+  animation-delay: 3.6s;
+}
+.main-menu .items-bg .nav-entree .card-animation .card:nth-child(37),
+.main-menu .items-bg .nav-plats .card-animation .card:nth-child(37),
+.main-menu .items-bg .nav-dessert .card-animation .card:nth-child(37) {
+  opacity: 0;
+  animation: menuEffect 2s ease forwards;
+  animation-delay: 3.7s;
+}
+.main-menu .items-bg .nav-entree .card-animation .card:nth-child(38),
+.main-menu .items-bg .nav-plats .card-animation .card:nth-child(38),
+.main-menu .items-bg .nav-dessert .card-animation .card:nth-child(38) {
+  opacity: 0;
+  animation: menuEffect 2s ease forwards;
+  animation-delay: 3.8s;
+}
+.main-menu .items-bg .nav-entree .card-animation .card:nth-child(39),
+.main-menu .items-bg .nav-plats .card-animation .card:nth-child(39),
+.main-menu .items-bg .nav-dessert .card-animation .card:nth-child(39) {
+  opacity: 0;
+  animation: menuEffect 2s ease forwards;
+  animation-delay: 3.9s;
+}
+.main-menu .items-bg .nav-entree .card-animation .card:nth-child(40),
+.main-menu .items-bg .nav-plats .card-animation .card:nth-child(40),
+.main-menu .items-bg .nav-dessert .card-animation .card:nth-child(40) {
+  opacity: 0;
+  animation: menuEffect 2s ease forwards;
+  animation-delay: 4s;
+}
+.main-menu .items-bg .nav-entree .card-animation .card:nth-child(41),
+.main-menu .items-bg .nav-plats .card-animation .card:nth-child(41),
+.main-menu .items-bg .nav-dessert .card-animation .card:nth-child(41) {
+  opacity: 0;
+  animation: menuEffect 2s ease forwards;
+  animation-delay: 4.1s;
+}
+.main-menu .items-bg .nav-entree .card-animation .card:nth-child(42),
+.main-menu .items-bg .nav-plats .card-animation .card:nth-child(42),
+.main-menu .items-bg .nav-dessert .card-animation .card:nth-child(42) {
+  opacity: 0;
+  animation: menuEffect 2s ease forwards;
+  animation-delay: 4.2s;
+}
+.main-menu .items-bg .nav-entree .card-animation .card:nth-child(43),
+.main-menu .items-bg .nav-plats .card-animation .card:nth-child(43),
+.main-menu .items-bg .nav-dessert .card-animation .card:nth-child(43) {
+  opacity: 0;
+  animation: menuEffect 2s ease forwards;
+  animation-delay: 4.3s;
+}
+.main-menu .items-bg .nav-entree .card-animation .card:nth-child(44),
+.main-menu .items-bg .nav-plats .card-animation .card:nth-child(44),
+.main-menu .items-bg .nav-dessert .card-animation .card:nth-child(44) {
+  opacity: 0;
+  animation: menuEffect 2s ease forwards;
+  animation-delay: 4.4s;
+}
+.main-menu .items-bg .nav-entree .card-animation .card:nth-child(45),
+.main-menu .items-bg .nav-plats .card-animation .card:nth-child(45),
+.main-menu .items-bg .nav-dessert .card-animation .card:nth-child(45) {
+  opacity: 0;
+  animation: menuEffect 2s ease forwards;
+  animation-delay: 4.5s;
+}
+.main-menu .items-bg .nav-entree .card-animation .card:nth-child(46),
+.main-menu .items-bg .nav-plats .card-animation .card:nth-child(46),
+.main-menu .items-bg .nav-dessert .card-animation .card:nth-child(46) {
+  opacity: 0;
+  animation: menuEffect 2s ease forwards;
+  animation-delay: 4.6s;
+}
+.main-menu .items-bg .nav-entree .card-animation .card:nth-child(47),
+.main-menu .items-bg .nav-plats .card-animation .card:nth-child(47),
+.main-menu .items-bg .nav-dessert .card-animation .card:nth-child(47) {
+  opacity: 0;
+  animation: menuEffect 2s ease forwards;
+  animation-delay: 4.7s;
+}
+.main-menu .items-bg .nav-entree .card-animation .card:nth-child(48),
+.main-menu .items-bg .nav-plats .card-animation .card:nth-child(48),
+.main-menu .items-bg .nav-dessert .card-animation .card:nth-child(48) {
+  opacity: 0;
+  animation: menuEffect 2s ease forwards;
+  animation-delay: 4.8s;
+}
+.main-menu .items-bg .nav-entree .card-animation .card:nth-child(49),
+.main-menu .items-bg .nav-plats .card-animation .card:nth-child(49),
+.main-menu .items-bg .nav-dessert .card-animation .card:nth-child(49) {
+  opacity: 0;
+  animation: menuEffect 2s ease forwards;
+  animation-delay: 4.9s;
+}
+.main-menu .items-bg .nav-entree .card-animation .card:nth-child(50),
+.main-menu .items-bg .nav-plats .card-animation .card:nth-child(50),
+.main-menu .items-bg .nav-dessert .card-animation .card:nth-child(50) {
+  opacity: 0;
+  animation: menuEffect 2s ease forwards;
+  animation-delay: 5s;
+}
+.main-menu .items-bg .nav-entree input,
+.main-menu .items-bg .nav-plats input,
+.main-menu .items-bg .nav-dessert input {
+  position: absolute;
+  opacity: 0;
+}
+.main-menu .items-bg .nav-entree h3,
+.main-menu .items-bg .nav-plats h3,
+.main-menu .items-bg .nav-dessert h3 {
+  position: relative;
+  font-size: 16px;
+  font-weight: 300;
+  color: black;
+}
+.main-menu .items-bg .nav-entree h3::after,
+.main-menu .items-bg .nav-plats h3::after,
+.main-menu .items-bg .nav-dessert h3::after {
+  content: "";
+  background-color: #99E2D0;
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 45px;
+  height: 2px;
+}
+.main-menu .items-bg .nav-entree .card,
+.main-menu .items-bg .nav-plats .card,
+.main-menu .items-bg .nav-dessert .card {
+  border-radius: 20px;
+  display: flex;
+  width: clamp(334px, 10px + 100vw - 500px, 634px);
+  height: 69px;
+  background-color: white;
+  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
+  padding-left: 15px;
+  margin-top: 12px;
+}
+.main-menu .items-bg .nav-entree .card input:checked + label .card-content,
+.main-menu .items-bg .nav-plats .card input:checked + label .card-content,
+.main-menu .items-bg .nav-dessert .card input:checked + label .card-content {
+  width: 100%;
+}
+.main-menu .items-bg .nav-entree .card input:checked + label .card-check,
+.main-menu .items-bg .nav-plats .card input:checked + label .card-check,
+.main-menu .items-bg .nav-dessert .card input:checked + label .card-check {
+  width: 59px;
+  transition: width 0.4s;
+}
+.main-menu .items-bg .nav-entree .card label,
+.main-menu .items-bg .nav-plats .card label,
+.main-menu .items-bg .nav-dessert .card label {
+  display: flex;
+  width: 100%;
+  cursor: pointer;
+}
+.main-menu .items-bg .nav-entree .card label .card-content,
+.main-menu .items-bg .nav-plats .card label .card-content,
+.main-menu .items-bg .nav-dessert .card label .card-content {
+  display: flex;
+  width: 100%;
+}
+.main-menu .items-bg .nav-entree .card label .card-content .card-prix,
+.main-menu .items-bg .nav-plats .card label .card-content .card-prix,
+.main-menu .items-bg .nav-dessert .card label .card-content .card-prix {
+  display: flex;
+  flex: 1;
+  justify-content: flex-end;
+  align-items: flex-end;
+  padding-bottom: 14px;
+  margin-left: auto;
+  font-size: 15px;
+  font-weight: 700;
+  color: black;
+  padding-right: 15px;
+}
+.main-menu .items-bg .nav-entree .card label .card-content .card-menu,
+.main-menu .items-bg .nav-plats .card label .card-content .card-menu,
+.main-menu .items-bg .nav-dessert .card label .card-content .card-menu {
+  display: flex;
+  flex: 8;
+  min-width: 0;
+  justify-content: center;
+  flex-direction: column;
+}
+.main-menu .items-bg .nav-entree .card label .card-content .card-menu .card-menu-title,
+.main-menu .items-bg .nav-plats .card label .card-content .card-menu .card-menu-title,
+.main-menu .items-bg .nav-dessert .card label .card-content .card-menu .card-menu-title {
+  font-size: 18px;
+  font-weight: 500;
+  color: black;
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.main-menu .items-bg .nav-entree .card label .card-content .card-menu .card-menu-text,
+.main-menu .items-bg .nav-plats .card label .card-content .card-menu .card-menu-text,
+.main-menu .items-bg .nav-dessert .card label .card-content .card-menu .card-menu-text {
+  font-size: 15px;
+  font-weight: 300;
+  color: black;
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.main-menu .items-bg .nav-entree .card label .card-content .card-check,
+.main-menu .items-bg .nav-plats .card label .card-content .card-check,
+.main-menu .items-bg .nav-dessert .card label .card-content .card-check {
+  display: flex;
+  width: 0;
+  height: 69px;
+  background-image: url(../Images-et-textes-Ohmyfood/images/logo/check.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #99E2D0;
+  transform-origin: 100%;
+  border-radius: 0 20px 20px 0;
+  overflow: hidden;
+  transition: width 0.4s;
+}
+.main-menu .button-com {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 40px;
+}
+.main-menu .button-com .button-commander {
+  opacity: 1;
+  font-size: 16px;
+  font-weight: 500;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  width: 186px;
+  height: 50px;
+  padding: 0;
+  background: linear-gradient(#FF79DA, #9356DC);
+  box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
+}
+.main-menu .button-com .button-commander-2 {
+  position: absolute;
+  font-size: 16px;
+  font-weight: 500;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  width: 186px;
+  height: 50px;
+  padding: 0;
+  background: linear-gradient(rgba(255, 121, 217, 0.6901960784), rgba(146, 86, 220, 0.6901960784));
+  box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
+  opacity: 0;
+}
+.main-menu .button-com:hover .button-commander-2 {
+  opacity: 1;
+}
+.main-menu .button-com:hover .button-commander {
+  opacity: 0;
+}
+
+footer {
+  background-color: #353535;
+  color: white;
+  margin: 0px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: 186px;
+}
+footer .footer-nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+footer .footer-nav .footer-logo {
+  background-image: url(../Images-et-textes-Ohmyfood/images/logo/ohmyfood-blanc.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 138px;
+  height: 27px;
+  display: block;
+  margin-left: 25px;
+  margin-top: 22px;
+  margin-bottom: 16px;
+}
+footer .footer-nav .footer-link {
+  margin-left: 25px;
+}
+footer .footer-nav .footer-link .footer-proposition {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 7px;
+}
+footer .footer-nav .footer-link .footer-proposition::before {
+  content: "";
+  background-image: url(../Images-et-textes-Ohmyfood/images/logo/couverts.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 20px;
+  height: 20px;
+  display: block;
+  margin-right: 4px;
+}
+footer .footer-nav .footer-link .footer-partenaire {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 7px;
+}
+footer .footer-nav .footer-link .footer-partenaire::before {
+  content: "";
+  background-image: url(../Images-et-textes-Ohmyfood/images/logo/mains.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 20px;
+  height: 20px;
+  display: block;
+  margin-right: 4px;
+}
+footer .footer-nav .footer-link .footer-legale,
+footer .footer-nav .footer-link .contact {
+  margin-bottom: 7px;
+}
+
+/* -------------------------------------------------------------------------MEDIA */
+@media (min-width: 688px) {
+  body header .header-title h1 {
+    padding-left: 0;
+    padding-right: 0;
+    font-size: 40px;
+    font-weight: 700;
+    color: black;
+  }
+  body main .fonctionnement {
+    height: 350px;
+  }
+  body main .fonctionnement .fonc-items {
+    padding-left: 5vw;
+    padding-right: 5vw;
+  }
+  body main .restaurant {
+    padding-left: 5vw;
+    padding-right: 5vw;
+  }
+  body .main-menu .items-bg {
+    max-width: 80%;
+  }
+}
+@media (min-width: 1024px) {
+  body main .fonctionnement .fonc-items {
+    padding-left: 180px;
+    padding-right: 180px;
+  }
+  body main .restaurant {
+    padding-left: 180px;
+    padding-right: 180px;
+  }
+  body main .restaurant .restaurant-grid {
+    grid-template-columns: repeat(2, 340px);
+    justify-content: center;
+  }
+  footer {
+    height: 114px;
+  }
+  footer .footer-nav {
+    flex-direction: row;
+  }
+  footer .footer-nav .footer-logo {
+    order: 2;
+    margin-top: 57px;
+    margin-right: 25px;
+  }
+  footer .footer-nav .footer-link {
+    margin-right: 40px;
+    margin-top: 64px;
+    display: flex;
+    flex-direction: row;
+  }
+  footer .footer-nav .footer-link .footer-proposition {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 7px;
+    margin-right: 10px;
+    font-weight: 500;
+  }
+  footer .footer-nav .footer-link .footer-partenaire {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 7px;
+    margin-right: 40px;
+    font-weight: 500;
+  }
+  footer .footer-nav .footer-link .footer-legale,
+  footer .footer-nav .footer-link .contact {
+    margin-left: 10px;
+  }
+}
+@media (min-width: 1350px) {
+  body main .restaurant .restaurant-grid {
+    grid-template-columns: repeat(2, 490px);
+    justify-content: space-between;
+  }
+  body main .restaurant .restaurant-grid .card:nth-child(1) {
+    border-radius: 15px;
+    display: flex;
+    width: 490px;
+    height: 251px;
+    background-color: white;
+    box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.1);
+  }
+  body main .restaurant .restaurant-grid .card:nth-child(1) .img_background {
+    width: 490px;
+  }
+  body main .restaurant .restaurant-grid .card:nth-child(2) {
+    border-radius: 15px;
+    display: flex;
+    width: 490px;
+    height: 251px;
+    background-color: white;
+    box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.1);
+  }
+  body main .restaurant .restaurant-grid .card:nth-child(2) .img_background {
+    width: 490px;
+  }
+  body main .restaurant .restaurant-grid .card:nth-child(3) {
+    border-radius: 15px;
+    display: flex;
+    width: 490px;
+    height: 251px;
+    background-color: white;
+    box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.1);
+  }
+  body main .restaurant .restaurant-grid .card:nth-child(3) .img_background {
+    width: 490px;
+  }
+  body main .restaurant .restaurant-grid .card:nth-child(4) {
+    border-radius: 15px;
+    display: flex;
+    width: 490px;
+    height: 251px;
+    background-color: white;
+    box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.1);
+  }
+  body main .restaurant .restaurant-grid .card:nth-child(4) .img_background {
+    width: 490px;
+  }
+  body .main-menu .items-bg {
+    min-width: 1055px;
+    max-width: 80%;
+  }
+}
+@media (min-width: 1401px) {
+  body main .fonctionnement {
+    height: 228px;
+  }
+}
+@media (min-width: 1500px) {
+  body main .restaurant .restaurant-grid {
+    grid-template-columns: repeat(auto-fit, 490px);
+    justify-content: space-around;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

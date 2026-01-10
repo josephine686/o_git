@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ohmyfood</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Shrikhand&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="load">
+        <div class="load-logo"></div>
+        <div class="bar">
+            <div class="back-bar"></div>
+            <div class="front-bar"></div>
+        </div>
+    </div>
+    <header>
+        <div class="title-bg"></div>
+        <div class="header-logo">
+            <img src="./Images-et-textes-Ohmyfood/images/logo/ohmyfood@2x.svg" alt="logo Ohmyfood noir">
+        </div>
+        <div class="location">
+            <input class="search-location" type="text" name="location" id="location" placeholder="Paris, Belleville">
+        </div>
+        <div class="header-title">
+            <h1>Réservez le menu qui vous convient</h1>
+            <h2>Découvrez des restaurants d’exception, sélectionnés par nos soins.</h2>
+        </div>
+        <button class="header-button">Explorer nos restaurants</button>
+        <button class="header-button__bg">Explorer nos restaurants</button>
+    </header>
+    <main>
+        <section class="fonctionnement">
+            <div class="fonc-items">
+                <h2>Fonctionnement</h2>
+                <div class="fonctionnement-flex">
+                    <div class="card">
+                        <div class="fonctionnement-bulle">
+                            1
+                        </div>
+                        <p>Choisissez un restaurant</p>
+                    </div>
+                    <div class="card">
+                        <div class="fonctionnement-bulle">
+                            <div class="fonctionnement-bulle__background"></div>
+                            2
+                        </div>
+                        <p>Composez votre menu</p>
+                    </div>
+                    <div class="card">
+                        <div class="fonctionnement-bulle">
+                            <div class="fonctionnement-bulle__background"></div>
+                            3
+                        </div>
+                        <p>Dégustez au restaurant</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="restaurant">
+            <h2>Restaurant</h2>
+            <div class="restaurant-grid">
+                <a class="card" href="La-palette-du-goût.html">
+                    <div class="img_background">
+                        <div class="nouveau">
+                            Nouveau
+                        </div>
+                    </div>
+                    <div class="txt-restaurant">
+                        <h3>La palette du goût</h3>
+                        <p>Ménilmontant</p>
+                        <div class="restaurant-logo">
+                            <input class="checkbox-custom" type="checkbox" name="palette" id="palette">
+                            <label for="palette"></label>
+                        </div>
+                    </div>
+                </a>
+
+                <a class="card" href="La-note-enchantée.html">
+                    <div class="img_background">
+                        <div class="nouveau">
+                            Nouveau
+                        </div>
+                    </div>
+                    <div class="txt-restaurant">
+                        <h3>La note enchantée</h3>
+                        <p>Charonne</p>
+                        <div class="restaurant-logo">
+                            <input class="checkbox-custom" type="checkbox" name="enchentee" id="enchentee">
+                            <label for="enchentee"></label>
+                        </div>
+                    </div>
+                </a>
+
+                <a class="card" href="À-la-française.html"> 
+                    <div class="img_background"></div>
+                    <div class="txt-restaurant">
+                        <h3>À la française</h3>
+                        <p>Cité Rouge</p>
+                        <div class="restaurant-logo">
+                            <input class="checkbox-custom" type="checkbox" name="francaise" id="francaise">
+                            <label for="francaise"></label>
+                        </div>
+                    </div>
+                </a>
+
+                <a class="card" href="Le-délice-des-sens.html">
+                    <div class="img_background"></div>
+                    <div class="txt-restaurant">
+                        <h3>Le délice des sens</h3>
+                        <p>Folie-Méricourt</p>
+                        <div class="restaurant-logo">
+                            <input class="checkbox-custom" type="checkbox" name="delice" id="delice">
+                            <label for="delice"></label>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <nav class="footer-nav">
+            <div class="footer-logo"></div>
+            <div class="footer-link">
+                <div class="footer-proposition">
+                    Proposer un restaurant
+                </div>
+                <div class="footer-partenaire">
+                    Devenir partenaire
+                </div>
+                <div class="footer-legale">Mentions légales</div>
+                <div class="contact"><a href="mailto:">Contact</a></div>
+            </div>
+        </nav>
+    </footer>
+</body>
+</html>
