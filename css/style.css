@@ -253,14 +253,13 @@ body main .fonctionnement {
   background-color: white;
 }
 body main .fonctionnement .fonc-items {
-  padding-right: 20px;
-  padding-left: 20px;
+  padding-right: 15px;
+  padding-left: 15px;
 }
 body main .fonctionnement .fonc-items > h2 {
   font-size: 24px;
   font-weight: 700;
   color: black;
-  padding-left: 15px;
 }
 body main .fonctionnement .fonctionnement-flex {
   display: flex;
@@ -380,6 +379,15 @@ body main .restaurant .restaurant-grid .card:nth-child(1) {
   background-color: white;
   box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.1);
   flex-direction: column;
+  position: relative;
+}
+body main .restaurant .restaurant-grid .card:nth-child(1) a {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 1;
 }
 body main .restaurant .restaurant-grid .card:nth-child(1) .img_background {
   border-radius: 15px 15px 0 0;
@@ -423,6 +431,7 @@ body main .restaurant .restaurant-grid .card:nth-child(1) .txt-restaurant .resta
   position: absolute;
   bottom: 40px;
   right: 20px;
+  z-index: 2;
 }
 body main .restaurant .restaurant-grid .card:nth-child(1) .txt-restaurant .restaurant-logo .checkbox-custom {
   position: absolute;
@@ -459,6 +468,15 @@ body main .restaurant .restaurant-grid .card:nth-child(2) {
   background-color: white;
   box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.1);
   flex-direction: column;
+  position: relative;
+}
+body main .restaurant .restaurant-grid .card:nth-child(2) a {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 1;
 }
 body main .restaurant .restaurant-grid .card:nth-child(2) .img_background {
   border-radius: 15px 15px 0 0;
@@ -502,6 +520,7 @@ body main .restaurant .restaurant-grid .card:nth-child(2) .txt-restaurant .resta
   position: absolute;
   bottom: 40px;
   right: 20px;
+  z-index: 2;
 }
 body main .restaurant .restaurant-grid .card:nth-child(2) .txt-restaurant .restaurant-logo .checkbox-custom {
   position: absolute;
@@ -538,6 +557,15 @@ body main .restaurant .restaurant-grid .card:nth-child(3) {
   background-color: white;
   box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.1);
   flex-direction: column;
+  position: relative;
+}
+body main .restaurant .restaurant-grid .card:nth-child(3) a {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 1;
 }
 body main .restaurant .restaurant-grid .card:nth-child(3) .img_background {
   border-radius: 15px 15px 0 0;
@@ -581,6 +609,7 @@ body main .restaurant .restaurant-grid .card:nth-child(3) .txt-restaurant .resta
   position: absolute;
   bottom: 40px;
   right: 20px;
+  z-index: 2;
 }
 body main .restaurant .restaurant-grid .card:nth-child(3) .txt-restaurant .restaurant-logo .checkbox-custom {
   position: absolute;
@@ -617,6 +646,15 @@ body main .restaurant .restaurant-grid .card:nth-child(4) {
   background-color: white;
   box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.1);
   flex-direction: column;
+  position: relative;
+}
+body main .restaurant .restaurant-grid .card:nth-child(4) a {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 1;
 }
 body main .restaurant .restaurant-grid .card:nth-child(4) .img_background {
   border-radius: 15px 15px 0 0;
@@ -660,6 +698,7 @@ body main .restaurant .restaurant-grid .card:nth-child(4) .txt-restaurant .resta
   position: absolute;
   bottom: 40px;
   right: 20px;
+  z-index: 2;
 }
 body main .restaurant .restaurant-grid .card:nth-child(4) .txt-restaurant .restaurant-logo .checkbox-custom {
   position: absolute;
@@ -1541,6 +1580,12 @@ footer .footer-nav .footer-link .contact {
   body main .fonctionnement {
     height: 228px;
   }
+  body main .fonctionnement .fonc-items {
+    width: 100%;
+  }
+  body main .restaurant h2 {
+    padding-left: 0;
+  }
 }
 @media (min-width: 1500px) {
   body main .restaurant .restaurant-grid {
@@ -1549,4 +1594,3 @@ footer .footer-nav .footer-link .contact {
   }
 }
 
-/*# sourceMappingURL=style.css.map */
