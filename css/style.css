@@ -371,7 +371,7 @@ body main .restaurant .restaurant-grid {
   justify-content: center;
   gap: 50px;
 }
-body main .restaurant .restaurant-grid .card:nth-child(1) {
+body main .restaurant .restaurant-grid .card {
   border-radius: 15px;
   display: flex;
   width: 340px;
@@ -381,7 +381,7 @@ body main .restaurant .restaurant-grid .card:nth-child(1) {
   flex-direction: column;
   position: relative;
 }
-body main .restaurant .restaurant-grid .card:nth-child(1) a {
+body main .restaurant .restaurant-grid .card a {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -389,106 +389,19 @@ body main .restaurant .restaurant-grid .card:nth-child(1) a {
   left: 0;
   z-index: 1;
 }
-body main .restaurant .restaurant-grid .card:nth-child(1) .img_background {
-  border-radius: 15px 15px 0 0;
-  background-image: url(../Images-et-textes-Ohmyfood/images/restaurants/1.jpg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  width: 340px;
-  height: 231px;
+body main .restaurant .restaurant-grid .card .img_background {
   position: relative;
 }
-body main .restaurant .restaurant-grid .card:nth-child(1) .img_background .nouveau {
-  position: absolute;
-  display: flex;
-  background-color: #99E2D0;
-  right: 25px;
-  top: 25px;
-  width: 80px;
-  height: 29px;
-  align-items: center;
-  justify-content: center;
-  font-size: 14px;
-  font-weight: 500;
-  color: #008766;
-}
-body main .restaurant .restaurant-grid .card:nth-child(1) .txt-restaurant {
-  position: relative;
-  padding-left: 15px;
-}
-body main .restaurant .restaurant-grid .card:nth-child(1) .txt-restaurant .h3 {
-  font-size: 18px;
-  font-weight: 700;
-  color: black;
-}
-body main .restaurant .restaurant-grid .card:nth-child(1) .txt-restaurant .p {
-  font-size: 17px;
-  font-weight: 300;
-  color: black;
-}
-body main .restaurant .restaurant-grid .card:nth-child(1) .txt-restaurant .restaurant-logo {
-  position: absolute;
-  bottom: 40px;
-  right: 20px;
-  z-index: 2;
-}
-body main .restaurant .restaurant-grid .card:nth-child(1) .txt-restaurant .restaurant-logo .checkbox-custom {
-  position: absolute;
-  opacity: 0;
-  cursor: pointer;
-}
-body main .restaurant .restaurant-grid .card:nth-child(1) .txt-restaurant .restaurant-logo .checkbox-custom + label {
-  background-image: url(../Images-et-textes-Ohmyfood/images/logo/coeur.svg);
-  display: block;
-  width: 20px;
-  height: 20px;
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
-}
-body main .restaurant .restaurant-grid .card:nth-child(1) .txt-restaurant .restaurant-logo .checkbox-custom:checked + label::after {
-  content: "";
-  background-image: url(../Images-et-textes-Ohmyfood/images/logo/coeur-checked.svg);
+body main .restaurant .restaurant-grid .card .img_background .img-bg__resto {
   display: inline-block;
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
-  width: 20px;
-  height: 20px;
-  transform-origin: bottom;
-  animation: fadeTop 0s ease forwards;
-  cursor: pointer;
-}
-body main .restaurant .restaurant-grid .card:nth-child(2) {
-  border-radius: 15px;
-  display: flex;
-  width: 340px;
-  height: 251px;
-  background-color: white;
-  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.1);
-  flex-direction: column;
-  position: relative;
-}
-body main .restaurant .restaurant-grid .card:nth-child(2) a {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  z-index: 1;
-}
-body main .restaurant .restaurant-grid .card:nth-child(2) .img_background {
   border-radius: 15px 15px 0 0;
-  background-image: url(../Images-et-textes-Ohmyfood/images/restaurants/2.jpg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  width: 340px;
-  height: 231px;
+  object-position: center;
+  object-fit: cover;
+  height: 155px;
+  width: 100%;
   position: relative;
 }
-body main .restaurant .restaurant-grid .card:nth-child(2) .img_background .nouveau {
+body main .restaurant .restaurant-grid .card .img_background .nouveau {
   position: absolute;
   display: flex;
   background-color: #99E2D0;
@@ -502,32 +415,32 @@ body main .restaurant .restaurant-grid .card:nth-child(2) .img_background .nouve
   font-weight: 500;
   color: #008766;
 }
-body main .restaurant .restaurant-grid .card:nth-child(2) .txt-restaurant {
+body main .restaurant .restaurant-grid .card .txt-restaurant {
   position: relative;
   padding-left: 15px;
 }
-body main .restaurant .restaurant-grid .card:nth-child(2) .txt-restaurant .h3 {
+body main .restaurant .restaurant-grid .card .txt-restaurant .h3 {
   font-size: 18px;
   font-weight: 700;
   color: black;
 }
-body main .restaurant .restaurant-grid .card:nth-child(2) .txt-restaurant .p {
+body main .restaurant .restaurant-grid .card .txt-restaurant .p {
   font-size: 17px;
   font-weight: 300;
   color: black;
 }
-body main .restaurant .restaurant-grid .card:nth-child(2) .txt-restaurant .restaurant-logo {
+body main .restaurant .restaurant-grid .card .txt-restaurant .restaurant-logo {
   position: absolute;
   bottom: 40px;
   right: 20px;
   z-index: 2;
 }
-body main .restaurant .restaurant-grid .card:nth-child(2) .txt-restaurant .restaurant-logo .checkbox-custom {
+body main .restaurant .restaurant-grid .card .txt-restaurant .restaurant-logo .checkbox-custom {
   position: absolute;
   opacity: 0;
   cursor: pointer;
 }
-body main .restaurant .restaurant-grid .card:nth-child(2) .txt-restaurant .restaurant-logo .checkbox-custom + label {
+body main .restaurant .restaurant-grid .card .txt-restaurant .restaurant-logo .checkbox-custom + label {
   background-image: url(../Images-et-textes-Ohmyfood/images/logo/coeur.svg);
   display: block;
   width: 20px;
@@ -536,185 +449,7 @@ body main .restaurant .restaurant-grid .card:nth-child(2) .txt-restaurant .resta
   background-size: contain;
   background-position: center;
 }
-body main .restaurant .restaurant-grid .card:nth-child(2) .txt-restaurant .restaurant-logo .checkbox-custom:checked + label::after {
-  content: "";
-  background-image: url(../Images-et-textes-Ohmyfood/images/logo/coeur-checked.svg);
-  display: inline-block;
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
-  width: 20px;
-  height: 20px;
-  transform-origin: bottom;
-  animation: fadeTop 0s ease forwards;
-  cursor: pointer;
-}
-body main .restaurant .restaurant-grid .card:nth-child(3) {
-  border-radius: 15px;
-  display: flex;
-  width: 340px;
-  height: 251px;
-  background-color: white;
-  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.1);
-  flex-direction: column;
-  position: relative;
-}
-body main .restaurant .restaurant-grid .card:nth-child(3) a {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  z-index: 1;
-}
-body main .restaurant .restaurant-grid .card:nth-child(3) .img_background {
-  border-radius: 15px 15px 0 0;
-  background-image: url(../Images-et-textes-Ohmyfood/images/restaurants/3.jpg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  width: 340px;
-  height: 231px;
-  position: relative;
-}
-body main .restaurant .restaurant-grid .card:nth-child(3) .img_background .nouveau {
-  position: absolute;
-  display: flex;
-  background-color: #99E2D0;
-  right: 25px;
-  top: 25px;
-  width: 80px;
-  height: 29px;
-  align-items: center;
-  justify-content: center;
-  font-size: 14px;
-  font-weight: 500;
-  color: #008766;
-}
-body main .restaurant .restaurant-grid .card:nth-child(3) .txt-restaurant {
-  position: relative;
-  padding-left: 15px;
-}
-body main .restaurant .restaurant-grid .card:nth-child(3) .txt-restaurant .h3 {
-  font-size: 18px;
-  font-weight: 700;
-  color: black;
-}
-body main .restaurant .restaurant-grid .card:nth-child(3) .txt-restaurant .p {
-  font-size: 17px;
-  font-weight: 300;
-  color: black;
-}
-body main .restaurant .restaurant-grid .card:nth-child(3) .txt-restaurant .restaurant-logo {
-  position: absolute;
-  bottom: 40px;
-  right: 20px;
-  z-index: 2;
-}
-body main .restaurant .restaurant-grid .card:nth-child(3) .txt-restaurant .restaurant-logo .checkbox-custom {
-  position: absolute;
-  opacity: 0;
-  cursor: pointer;
-}
-body main .restaurant .restaurant-grid .card:nth-child(3) .txt-restaurant .restaurant-logo .checkbox-custom + label {
-  background-image: url(../Images-et-textes-Ohmyfood/images/logo/coeur.svg);
-  display: block;
-  width: 20px;
-  height: 20px;
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
-}
-body main .restaurant .restaurant-grid .card:nth-child(3) .txt-restaurant .restaurant-logo .checkbox-custom:checked + label::after {
-  content: "";
-  background-image: url(../Images-et-textes-Ohmyfood/images/logo/coeur-checked.svg);
-  display: inline-block;
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
-  width: 20px;
-  height: 20px;
-  transform-origin: bottom;
-  animation: fadeTop 0s ease forwards;
-  cursor: pointer;
-}
-body main .restaurant .restaurant-grid .card:nth-child(4) {
-  border-radius: 15px;
-  display: flex;
-  width: 340px;
-  height: 251px;
-  background-color: white;
-  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.1);
-  flex-direction: column;
-  position: relative;
-}
-body main .restaurant .restaurant-grid .card:nth-child(4) a {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  z-index: 1;
-}
-body main .restaurant .restaurant-grid .card:nth-child(4) .img_background {
-  border-radius: 15px 15px 0 0;
-  background-image: url(../Images-et-textes-Ohmyfood/images/restaurants/4.jpg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  width: 340px;
-  height: 231px;
-  position: relative;
-}
-body main .restaurant .restaurant-grid .card:nth-child(4) .img_background .nouveau {
-  position: absolute;
-  display: flex;
-  background-color: #99E2D0;
-  right: 25px;
-  top: 25px;
-  width: 80px;
-  height: 29px;
-  align-items: center;
-  justify-content: center;
-  font-size: 14px;
-  font-weight: 500;
-  color: #008766;
-}
-body main .restaurant .restaurant-grid .card:nth-child(4) .txt-restaurant {
-  position: relative;
-  padding-left: 15px;
-}
-body main .restaurant .restaurant-grid .card:nth-child(4) .txt-restaurant .h3 {
-  font-size: 18px;
-  font-weight: 700;
-  color: black;
-}
-body main .restaurant .restaurant-grid .card:nth-child(4) .txt-restaurant .p {
-  font-size: 17px;
-  font-weight: 300;
-  color: black;
-}
-body main .restaurant .restaurant-grid .card:nth-child(4) .txt-restaurant .restaurant-logo {
-  position: absolute;
-  bottom: 40px;
-  right: 20px;
-  z-index: 2;
-}
-body main .restaurant .restaurant-grid .card:nth-child(4) .txt-restaurant .restaurant-logo .checkbox-custom {
-  position: absolute;
-  opacity: 0;
-  cursor: pointer;
-}
-body main .restaurant .restaurant-grid .card:nth-child(4) .txt-restaurant .restaurant-logo .checkbox-custom + label {
-  background-image: url(../Images-et-textes-Ohmyfood/images/logo/coeur.svg);
-  display: block;
-  width: 20px;
-  height: 20px;
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
-}
-body main .restaurant .restaurant-grid .card:nth-child(4) .txt-restaurant .restaurant-logo .checkbox-custom:checked + label::after {
+body main .restaurant .restaurant-grid .card .txt-restaurant .restaurant-logo .checkbox-custom:checked + label::after {
   content: "";
   background-image: url(../Images-et-textes-Ohmyfood/images/logo/coeur-checked.svg);
   display: inline-block;
@@ -1527,7 +1262,7 @@ footer .footer-nav .footer-link .contact {
     grid-template-columns: repeat(2, 490px);
     justify-content: space-between;
   }
-  body main .restaurant .restaurant-grid .card:nth-child(1) {
+  body main .restaurant .restaurant-grid .card {
     border-radius: 15px;
     display: flex;
     width: 490px;
@@ -1535,40 +1270,7 @@ footer .footer-nav .footer-link .contact {
     background-color: white;
     box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.1);
   }
-  body main .restaurant .restaurant-grid .card:nth-child(1) .img_background {
-    width: 490px;
-  }
-  body main .restaurant .restaurant-grid .card:nth-child(2) {
-    border-radius: 15px;
-    display: flex;
-    width: 490px;
-    height: 251px;
-    background-color: white;
-    box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.1);
-  }
-  body main .restaurant .restaurant-grid .card:nth-child(2) .img_background {
-    width: 490px;
-  }
-  body main .restaurant .restaurant-grid .card:nth-child(3) {
-    border-radius: 15px;
-    display: flex;
-    width: 490px;
-    height: 251px;
-    background-color: white;
-    box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.1);
-  }
-  body main .restaurant .restaurant-grid .card:nth-child(3) .img_background {
-    width: 490px;
-  }
-  body main .restaurant .restaurant-grid .card:nth-child(4) {
-    border-radius: 15px;
-    display: flex;
-    width: 490px;
-    height: 251px;
-    background-color: white;
-    box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.1);
-  }
-  body main .restaurant .restaurant-grid .card:nth-child(4) .img_background {
+  body main .restaurant .restaurant-grid .card .img_background {
     width: 490px;
   }
   body .main-menu .items-bg {
@@ -1594,4 +1296,3 @@ footer .footer-nav .footer-link .contact {
   }
 }
 
-/*# sourceMappingURL=style.css.map */

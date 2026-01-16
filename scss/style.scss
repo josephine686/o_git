@@ -462,92 +462,93 @@ body {
         justify-content: center;
         gap: 50px;
 
-        @each $img in $resto-img {
-          .card:nth-child(#{$img}) {
-            @include card(15px, flex, 340px, 251px, $white, 0px 4px 15px 0px rgba(0, 0, 0, 0.1));
-            flex-direction: column;
+        .card{
+          @include card(15px, flex, 340px, 251px, $white, 0px 4px 15px 0px rgba(0, 0, 0, 0.1));
+          flex-direction: column;
+          position: relative;
+
+          a{
+            position: absolute;
+            top:0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            z-index: 1;
+          }
+
+          .img_background {
             position: relative;
 
-            a{
-              position: absolute;
-              top:0;
-              bottom: 0;
-              right: 0;
-              left: 0;
-              z-index: 1;
-            }
-
-            .img_background {
+            .img-bg__resto{
+              display: inline-block;
               border-radius: 15px 15px 0 0;
-              background-image: url(../Images-et-textes-Ohmyfood/images/restaurants/#{$img}.jpg);
-              background-repeat: no-repeat;
-              background-position: center;
-              background-size: cover;
-              width: 340px;
-              height: 231px;
+              object-position: center;
+              object-fit: cover;
+              height: 155px;
+              width: 100%;
               position: relative;
-
-              .nouveau {
-                position: absolute;
-                display: flex;
-                background-color: $green-color;
-                right: 25px;
-                top: 25px;
-                width: 80px;
-                height: 29px;
-                align-items: center;
-                justify-content: center;
-                @include font(14px, 500, $restaurant-grid-nouveau__color);
-              }
             }
 
-            .txt-restaurant {
-              position: relative;
-              padding-left: 15px;
+            .nouveau {
+              position: absolute;
+              display: flex;
+              background-color: $green-color;
+              right: 25px;
+              top: 25px;
+              width: 80px;
+              height: 29px;
+              align-items: center;
+              justify-content: center;
+              @include font(14px, 500, $restaurant-grid-nouveau__color);
+            }
+          }
 
-              .h3 {
-                @include font(18px, 700);
-              }
+          .txt-restaurant {
+            position: relative;
+            padding-left: 15px;
 
-              .p {
-                @include font(17px, 300);
-              }
+            .h3 {
+              @include font(18px, 700);
+            }
 
-              .restaurant-logo {
+            .p {
+              @include font(17px, 300);
+            }
+
+            .restaurant-logo {
+              position: absolute;
+              bottom: 40px;
+              right: 20px;
+              z-index: 2;
+
+              .checkbox-custom {
                 position: absolute;
-                bottom: 40px;
-                right: 20px;
-                z-index: 2;
+                opacity: 0;
+                cursor: pointer;
+              }
 
-                .checkbox-custom {
-                  position: absolute;
-                  opacity: 0;
-                  cursor: pointer;
-                }
+              .checkbox-custom+label {
+                background-image: $restaurant-coeur__logo;
+                display: block;
+                width: 20px;
+                height: 20px;
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-position: center;
+              }
 
-                .checkbox-custom+label {
-                  background-image: $restaurant-coeur__logo;
-                  display: block;
-                  width: 20px;
-                  height: 20px;
-                  background-repeat: no-repeat;
-                  background-size: contain;
-                  background-position: center;
-                }
-
-                .checkbox-custom:checked+label::after {
-                  content: "";
-                  background-image: $restaurant-coeur__logo-checked;
-                  display: inline-block;
-                  background-repeat: no-repeat;
-                  background-size: contain;
-                  background-position: center;
-                  width: 20px;
-                  height: 20px;
-                  transform-origin: bottom;
-                  animation: fadeTop 0.0s ease forwards;
-                  cursor: pointer;
-                }
+              .checkbox-custom:checked+label::after {
+                content: "";
+                background-image: $restaurant-coeur__logo-checked;
+                display: inline-block;
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-position: center;
+                width: 20px;
+                height: 20px;
+                transform-origin: bottom;
+                animation: fadeTop 0.0s ease forwards;
+                cursor: pointer;
               }
             }
           }
@@ -1047,8 +1048,7 @@ footer {
           grid-template-columns: repeat(2, 490px);
           justify-content: space-between;
 
-          @each $img in $resto-img {
-            .card:nth-child(#{$img}) {
+            .card{
               @include card(15px, flex, 490px, 251px, white, 0px 4px 15px 0px rgba(0, 0, 0, 0.1));
 
               .img_background {
@@ -1059,7 +1059,7 @@ footer {
         }
       }
     }
-  }
+  
 
   body{
     .main-menu{
